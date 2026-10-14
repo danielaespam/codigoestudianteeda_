@@ -100,13 +100,17 @@ public class ListaEnlazadaSimple<T> {
      * @return true si el valor existe en algun nodo, false en caso contrario
      */
     public boolean buscar(T valorBuscado) {
-        // ====================================================================
-        // TODO: [ESTUDIANTE] Escribe aqui tu algoritmo de busqueda lineal.
-        // Guiate con el diagrama de flujo proporcionado en el README.md.
-        // ====================================================================
-
-        System.out.println("  [AVISO] El metodo buscar() aun no ha sido implementado por el estudiante.");
-        return false;
+       Nodo<T> actual = cabeza; // Comenzamos desde el primer nodo (cabeza)
+        
+        while (actual != null) {
+            // Comparamos el valor del nodo actual con el valor buscado
+            if (actual.getDato().equals(valorBuscado)) {
+                return true; // ¡Lo encontramos!
+            }
+            actual = actual.getSiguiente(); // Avanzamos al siguiente nodo
+        }
+        
+        return false; // Si llegamos al final y no lo encontramos
     }
 
     // ------------------------------------------------------------------------
